@@ -1,0 +1,18 @@
+class Solution {
+public:
+     vector<int>A;
+    void travel(TreeNode *root)
+    {
+        if(root!=NULL)
+        {
+            
+            travel(root->left);
+            travel(root->right);
+             A.push_back(root->val);
+        }
+    }
+    vector<int> postorderTraversal(TreeNode* root) {
+       travel(root);
+        return A;  
+    }
+};
